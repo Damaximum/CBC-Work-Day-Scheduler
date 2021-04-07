@@ -49,5 +49,6 @@ $('*[id*="saveButton"]').each(function() {
 
 // Loading up saved information
 $('*[id*="hour"]').each(function() {
+    if ($(this).data('time') == )
     $(this).val(timeText.hour[sectionTime]);
 });
