@@ -32,7 +32,7 @@ $('*[id*="saveButton"]').each(function() {
     $(this).on('click', function() {
         var textInput = $(this).siblings('.description').val();
         var blockHour = $(this).siblings('.description').data('time')
-        console.log(blockHour)
+        // console.log(blockHour)
 
         timeText.push({
             hour: blockHour,
@@ -42,13 +42,12 @@ $('*[id*="saveButton"]').each(function() {
         timeText.sort(function(a, b) {
             return parseFloat(b.hour) - parseFloat(a.hour);
         });
-
+// console.log(timeText);
         localStorage.setItem('timeText', JSON.stringify(timeText));
     });
 });
 
 // Loading up saved information
-$('*[id*="hour"]').each(function() {
-    if ($(this).data('time') == )
-    $(this).val(timeText.hour[sectionTime]);
-});
+for (var i = 0; i < timeText.length; i++) {
+    $(`[data-time=${timeText[i].hour}]`).val(timeText[i].text)
+};
